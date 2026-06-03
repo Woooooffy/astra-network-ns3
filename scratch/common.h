@@ -334,7 +334,7 @@ bool ReadConf(string network_configuration) {
     fflush(stdout);
     return false;
   }
-  
+
   while (!conf.eof()) {
     std::string key;
     conf >> key;
@@ -837,8 +837,10 @@ bool SetupNetwork(void (*qp_finish)(FILE *, Ptr<RdmaQueuePair>)) {
   // setup switch CC
   //
   for (uint32_t i = 0; i < node_num; i++) {
+    printf("node %u type %u\n", i, n.Get(i)->GetNodeType());
     if (n.Get(i)->GetNodeType() == 1) { // switch
       Ptr<SwitchNode> sw = DynamicCast<SwitchNode>(n.Get(i));
+      printf("set switch %u CcMode %u maxRtt %lu\n", i, cc_mode, maxRtt);
       sw->SetAttribute("CcMode", UintegerValue(cc_mode));
       sw->SetAttribute("MaxRtt", UintegerValue(maxRtt));
     }
