@@ -3,7 +3,7 @@ USE_DYNAMIC_PFC_THRESHOLD 1
 
 PACKET_PAYLOAD_SIZE 1000
 
-TOPOLOGY_FILE ../../scratch/topology/8_nodes_1_switch_topology.txt
+TOPOLOGY_FILE ../../scratch/topology/8_nodes_2_switch_topology.txt
 FLOW_FILE ../../scratch/output/flow.txt
 TRACE_FILE ../../scratch/output/trace.txt
 TRACE_OUTPUT_FILE ../../scratch/output/mix.tr
@@ -20,7 +20,7 @@ CC_MODE 12
 ALPHA_RESUME_INTERVAL 1
 RATE_DECREASE_INTERVAL 4
 CLAMP_TARGET_RATE 0
-RP_TIMER 900 
+RP_TIMER 900
 EWMA_GAIN 0.00390625
 FAST_RECOVERY_TIMES 1
 RATE_AI 50Mb/s
